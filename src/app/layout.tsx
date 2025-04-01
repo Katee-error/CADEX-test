@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/theme";
+import { Footer, Header } from "@/components/layout";
+import { Box, HStack } from "@chakra-ui/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeProvider>
-            {children}
-        </ThemeProvider>
+        <HStack display="flex" flexDirection="column" minHeight="100vh">
+          <ThemeProvider>
+            <Header />
+            <Box flex="1">{children}</Box>
+            <Footer />
+          </ThemeProvider>
+        </HStack>
       </body>
     </html>
   );
