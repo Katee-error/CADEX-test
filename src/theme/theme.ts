@@ -3,11 +3,12 @@
 import { extendTheme, ThemeConfig, withDefaultColorScheme } from "@chakra-ui/react";
 
 const semanticColors = {
-  primaryText: "#fafafa",
+  primaryText: "#000",
+  buttonText: '#fff',
+  bgButton: '#000',
   secondaryText: "rgba(255, 255, 255, 0.6)",
-  headingSecondaryText: "rgba(255, 255, 255, 0.7)",
   background: "white",
-  accent: "#0F89D3",
+  secondaryBackground: "#D8D8D8"
 };
 
 const config: ThemeConfig = {
@@ -30,15 +31,15 @@ export const theme = extendTheme(
       ...semanticColors,
     },
     components: {
-      Badge: {
+      Button: {
         baseStyle: {
-          color: "primaryText",
-          bgColor: "accent",
-          padding: "5px 10px",
-          mb: "20px",
-          borderRadius: "full",
+          color: semanticColors.buttonText,
+          bgColor: semanticColors.bgButton,
+          padding: "5px 40px",
+          borderRadius: "10px",
           fontWeight: 600,
-          fontSize: "14px",
+          fontSize: "16px",
+          boxShadow: "1px 2px 5px 0 rgba(0, 0, 0, 0.2)"
         },
       },
     },
