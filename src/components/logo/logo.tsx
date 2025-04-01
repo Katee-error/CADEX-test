@@ -4,10 +4,8 @@ import React from "react";
 
 export const Logo: React.FC = () => {
   return (
-    <Box>
       <Link href="/" passHref>
-        <Text as='h1' fontSize='24px'>Some Company</Text>
+        <Text as='h1' fontSize='24px' fontWeight='600'>Some Company</Text>
       </Link>
-    </Box>
   );
 };
